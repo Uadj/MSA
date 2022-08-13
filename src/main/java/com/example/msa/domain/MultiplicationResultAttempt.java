@@ -1,5 +1,7 @@
-package com.example.msa;
+package com.example.msa.domain;
 
+import com.example.msa.domain.Multiplication;
+import com.example.msa.domain.User;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

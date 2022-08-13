@@ -1,13 +1,13 @@
 package com.example.msa;
 
-import org.assertj.core.api.Assertions;
-import org.junit.Before;
+import com.example.msa.domain.Multiplication;
+import com.example.msa.domain.MultiplicationResultAttempt;
+import com.example.msa.domain.User;
+import com.example.msa.service.MultiplicationServiceImpl;
+import com.example.msa.service.RandomGeneratorService;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.when;
 
@@ -28,6 +28,26 @@ class MultiplicationServiceImplTest {
 
         assertThat(multiplication.getFactorA()).isEqualTo(50);
         assertThat(multiplication.getFactorB()).isEqualTo(30);
-        assertThat(multiplication.getResult()).isEqualTo(1500);
+        //assertThat(multiplication.getResult()).isEqualTo(1500);
+    }
+    @Test
+    public void checkCorrectAtteptTest(){
+        Multiplication multiplication = new Multiplication(50,60);
+        User user = new User("John_doe");
+        MultiplicationResultAttempt attempt = new MultiplicationResultAttempt(user, multiplication, 3000);
+
+        boolean attemptResult = multiplicationServiceImpl.checkAttempt(attempt);
+
+        assertThat(attemptResult).isTrue();
+    }
+    @Test
+    public void checkWrongAtteptTest(){
+        Multiplication multiplication = new Multiplication(50,60);
+        User user = new User("John_doe");
+        MultiplicationResultAttempt attempt = new MultiplicationResultAttempt(user, multiplication, 3010);
+
+        boolean attemptResult = multiplicationServiceImpl.checkAttempt(attempt);
+
+        assertThat(attemptResult).isFalse();
     }
 }

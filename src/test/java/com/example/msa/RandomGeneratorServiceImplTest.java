@@ -1,7 +1,7 @@
 package com.example.msa;
 
+import com.example.msa.service.RandomGeneratorServiceImpl;
 import org.junit.Before;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -9,7 +9,6 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class RandomGeneratorServiceImplTest {
     private RandomGeneratorServiceImpl randomGeneratorServiceImpl = new RandomGeneratorServiceImpl();

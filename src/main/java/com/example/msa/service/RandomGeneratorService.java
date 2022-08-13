@@ -1,4 +1,4 @@
-package com.example.msa;
+package com.example.msa.service;
 
 public interface RandomGeneratorService {
     int generateRandomFactor();

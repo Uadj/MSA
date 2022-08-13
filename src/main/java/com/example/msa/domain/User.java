@@ -1,4 +1,4 @@
-package com.example.msa;
+package com.example.msa.domain;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

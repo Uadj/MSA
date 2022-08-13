@@ -1,4 +1,6 @@
-package com.example.msa;
+package com.example.msa.service;
+
+import com.example.msa.service.RandomGeneratorService;
 
 import java.util.Random;
 
